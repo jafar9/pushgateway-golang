@@ -1,0 +1,22 @@
+{
+	"metric_type": "Gauge",
+	"metrics": [{
+		"name": "accuracy",
+		"value": 10.4,
+		"labels": [{
+			"key": "step",
+			"value": "100"
+		}, {
+			"key": "jobname",
+			"value": "test-jaf-1"
+		}]
+	}, {
+		"name": "epoch",
+		"value": 1,
+		"labels": [{
+			"key": "jobname",
+			"value": "test-epoch"
+		}]
+	}]
+}
+

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package models;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.goproto_unkeyed_all) = false;
+option (gogoproto.goproto_unrecognized_all) = false;
+option (gogoproto.goproto_sizecache_all) = false;
+option (gogoproto.marshaler_all) = false;
+option (gogoproto.unmarshaler_all) = false;
+option (gogoproto.sizer_all) = false;
+
+message RequestData {
+	string metric_type = 2; //Gauge, Counter, Histogram, Summary
+	repeated MetricModel metrics = 3;
+	repeated LabelModel common_labels = 4;
+}
+
+message MetricModel {
+	string name = 1;
+	double value = 2;
+	repeated LabelModel labels = 3;
+}
+
+message LabelModel {
+	string key = 1;
+	string value = 2;
+}
+
